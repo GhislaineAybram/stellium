@@ -1,8 +1,7 @@
-.footer {
-    display: flex;
-    position: absolute;
-    bottom: 0;
+:host {
+  margin-top: auto; /* Pousse le footer vers le bas */
 }
+
 .cursor-pointer {
   cursor: pointer;
 }

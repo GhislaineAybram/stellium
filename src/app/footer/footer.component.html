@@ -1,9 +1,9 @@
 <div class="footer w-full z-10 font-body text-gray-300 bg-gray-800 text-sm font-medium p-4 flex flex-col items-center">
   <div class="cursor-pointer flex flex-col md:flex-row items-center justify-center max-w-7xl mx-auto md:space-y-0 md:space-x-4">
-    <p class="px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white">{{ about }}</p>
-    <p class="px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white">{{ legal }}</p>
-    <p class="px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white">{{ privacy }}</p>
-    <p class="px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white">{{ contact }}</p>
+    <p routerLink="about"class="px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white">{{ about }}</p>
+    <p routerLink="legal" class="px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white">{{ legal }}</p>
+    <!-- <p class="px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white">{{ privacy }}</p> -->
+    <p routerLink="contact" class="px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white">{{ contact }}</p>
   </div>
   <p class="mt-6 text-center w-full">{{ copyright }}</p>
 </div>
