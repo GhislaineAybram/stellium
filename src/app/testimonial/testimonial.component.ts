@@ -1,15 +1,18 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Feedback } from '../models/feedback';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-testimonial',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './testimonial.component.html',
   styleUrl: './testimonial.component.scss'
 })
 export class TestimonialComponent implements OnInit {
   @Input() feedbacks!: Feedback[];
-
+  
+  currentIndex = 0;
+  
   ngOnInit(): void {
     this.feedbacks = [
       new Feedback(
@@ -23,7 +26,28 @@ export class TestimonialComponent implements OnInit {
     ];
   }
 
-  get firstFeedback(): Feedback | undefined {
-    return this.feedbacks[0];
+  get currentFeedback(): Feedback | undefined {
+    return this.feedbacks[this.currentIndex];
+  }
+
+  get starsArray(): boolean[] {
+    const rating = this.currentFeedback?.rating || 0;
+    return Array(5).fill(false).map((_, index) => index < rating);
+  }
+
+  previousSlide(): void {
+    this.currentIndex = this.currentIndex === 0 
+      ? this.feedbacks.length - 1 
+      : this.currentIndex - 1;
+  }
+
+  nextSlide(): void {
+    this.currentIndex = this.currentIndex === this.feedbacks.length - 1 
+      ? 0 
+      : this.currentIndex + 1;
+  }
+
+  goToSlide(index: number): void {
+    this.currentIndex = index;
   }
 }
