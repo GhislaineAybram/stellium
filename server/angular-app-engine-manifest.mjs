@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/stellium',
+  basePath: '/',
   supportedLocales: {
   "en-US": ""
 },
