@@ -3,10 +3,12 @@ import { TestimonialComponent } from '../testimonial/testimonial.component';
 import { EventsComponent } from '../events/events.component';
 import { MediasComponent } from '../medias/medias.component';
 import { NewsComponent } from '../news/news.component';
+import { PillarsComponent } from '../pillars/pillars.component';
+import { AboutComponent } from '../about/about.component';
 
 @Component({
   selector: 'app-homepage',
-  imports: [TestimonialComponent, EventsComponent, MediasComponent, NewsComponent],
+  imports: [AboutComponent, PillarsComponent, TestimonialComponent, EventsComponent, MediasComponent, NewsComponent],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss'
 })

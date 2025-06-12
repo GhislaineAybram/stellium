@@ -19,6 +19,6 @@ export class FooterComponent implements OnInit {
     this.legal = 'Mentions légales';
     this.privacy = 'Politique de confidentialité';
     this.contact = 'Contact';
-    this.copyright = '© julien-poudras-cgp.io';
+    this.copyright = '© 2025 Julien POUDRAS - Tous droits réservés';
   }
 }

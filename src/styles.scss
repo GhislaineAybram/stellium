@@ -10,3 +10,16 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.visible-link {
+  color: blue;
+  text-decoration: underline;
+  text-decoration-color: blue;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+.visible-link:hover {
+  color: grey;
+  text-decoration-color: grey;
+}
