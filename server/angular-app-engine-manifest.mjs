@@ -1,6 +1,6 @@
 
 export default {
-  basePath: 'https://GhislaineAybram.github.io/stellium',
+  basePath: '=/stellium',
   supportedLocales: {
   "en-US": ""
 },

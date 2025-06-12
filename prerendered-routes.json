@@ -1,9 +1,9 @@
 {
   "routes": {
-    "/stellium": {},
-    "/stellium/about": {},
-    "/stellium/contact": {},
-    "/stellium/legal": {},
-    "/stellium/privacy": {}
+    "/=/stellium": {},
+    "/=/stellium/about": {},
+    "/=/stellium/contact": {},
+    "/=/stellium/legal": {},
+    "/=/stellium/privacy": {}
   }
 }
