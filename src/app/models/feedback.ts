@@ -1,5 +1,5 @@
-export class Feedback {
-    constructor(public text: string,
-                public author: string,
-                public rating: number) {}
+export interface Feedback {
+    text: string;
+    author: string;
+    rating: number;
 }

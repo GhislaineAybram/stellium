@@ -1,3 +1,4 @@
+import { registerLocaleData } from '@angular/common';
 import {
   AngularNodeAppEngine,
   createNodeRequestHandler,
@@ -7,6 +8,9 @@ import {
 import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeFr);
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
