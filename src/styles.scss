@@ -1,9 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+@import 'assets/styles/variables';
 
+// ========================================
+// FONT
+// ========================================
+h1 {
+  font-family: 'Playfair Display', serif;
+}
+h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+h4 {
+  font-family: 'Lato', sans-serif;
+  font-style: italic;
+}
+p {
+  font-family: 'Lato', sans-serif;
+}
+
+// ========================================
+// GENERAL
+// ========================================
 html, body {
   height: 100%;
   margin: 0;
+  background-color: $color-white;
+  color: $color-black;
 }
 
 body {
@@ -11,15 +37,54 @@ body {
   flex-direction: column;
 }
 
+.color-grey-dark {
+  color: $color-grey-800;
+}
+.color-grey-medium {
+  color: $color-grey-500;
+}
+.color-blue {
+  color: $color-blue-700;
+}
+.color-white {
+  color: $color-white;
+}
+
+.bg-blue-very-light {
+  background-color: $color-blue-100;
+}
+.bg-blue-light {
+  background-color: $color-blue-200;
+}
+
+.section-line {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.section-line::after {
+  content: "";
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+  width: 75px;
+  height: 8px;
+  background-color: $color-bronze-400;
+}
+
+// ========================================
+// VISIBLE LINKS
+// ========================================
 .visible-link {
-  color: blue;
+  color: $color-blue-700;
   text-decoration: underline;
-  text-decoration-color: blue;
+  text-decoration-color: $color-blue-700;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
   transition: color 0.3s ease, text-decoration-color 0.3s ease;
 }
 .visible-link:hover {
-  color: grey;
-  text-decoration-color: grey;
+  color: $color-blue-800;
+  text-decoration-color: $color-blue-800;
 }

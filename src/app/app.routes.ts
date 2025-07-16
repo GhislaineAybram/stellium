@@ -4,6 +4,7 @@ import { ContactComponent } from './features/contact/contact.component';
 import { PrivacyComponent } from './features/privacy/privacy.component';
 import { AboutComponent } from './features/homepage/about/about.component';
 import { HomepageComponent } from './features/homepage/homepage/homepage.component';
+import { AdminComponent } from './features/admin/admin.component';
 
 export const routes: Routes = [
     { path: 'about', component: AboutComponent},
@@ -11,4 +12,5 @@ export const routes: Routes = [
     { path: 'legal', component: LegalComponent},
     { path: 'privacy', component: PrivacyComponent},
     { path: 'contact', component: ContactComponent},
+    { path: 'admin', component: AdminComponent},
 ];
