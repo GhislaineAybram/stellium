@@ -17,6 +17,11 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "allowedCommonJsDependencies": [
+              "@supabase/node-fetch",
+              "whatwg-url",
+              "@supabase/supabase-js"
+            ],
             "outputPath": "dist/stellium",
             "index": "src/index.html",
             "browser": "src/main.ts",

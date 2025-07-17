@@ -1,33 +1,62 @@
-import { Component, Input, OnInit } from '@angular/core';
-
+import { Component, Inject, OnInit, AfterViewInit, PLATFORM_ID, ChangeDetectorRef } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Feedback } from '../../../models/feedback';
+import { SupabaseService } from '../../../supabase.service';
 
 @Component({
   selector: 'app-testimonial',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './testimonial.component.html',
   styleUrl: './testimonial.component.scss'
 })
-export class TestimonialComponent implements OnInit {
-  @Input() feedbacks!: Feedback[];
-  
+export class TestimonialComponent implements OnInit, AfterViewInit {
+  feedbacks: Feedback[] = [];
   currentIndex = 0;
-  
+  isLoading = true;
+
+  constructor(
+    private readonly supabase: SupabaseService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private cdr: ChangeDetectorRef // Ajouter ceci
+  ) {}
+
   ngOnInit(): void {
-    this.feedbacks = [
-      {
-        id: '1',
-        feedback: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.',
-        author: 'Julie V.',
-        rating: 5
-      },
-      {
-        id: '2',
-        feedback: 'Tempore quo primis auspiciis in mundanum fulgorem surgeret victura dum erunt homines Roma, ut augeretur sublimibus incrementis, foedere pacis aeternae Virtus convenit atque Fortuna plerumque dissidentes, quarum si altera defuisset, ad perfectam non venerat summitatem.',
-        author: 'Marc G.',
-        rating: 4
-      },
-    ];
+    this.isLoading = true;
+  }
+
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+        this.getFeedbacks();
+      }, 0);
+    } else {
+      this.isLoading = false;
+      this.cdr.detectChanges(); // Ajouter ceci
+    }
+  }
+
+  async getFeedbacks() {
+    try {
+      this.isLoading = true;
+      console.log('Loading feedbacks...');
+      
+      const { data, error } = await this.supabase.getFeedbacks();
+
+      if (error) {
+        console.error('Error loading feedbacks:', error);
+        this.feedbacks = [];
+      } else {
+        console.log('Feedbacks loaded:', data);
+        this.feedbacks = data || [];
+      }
+    } catch (error) {
+      console.error('Unexpected error loading feedbacks:', error);
+      this.feedbacks = [];
+    } finally {
+      this.isLoading = false;
+      this.cdr.detectChanges(); // Ajouter ceci
+      console.log('Final feedbacks:', this.feedbacks);
+    }
   }
 
   get currentFeedback(): Feedback | undefined {
@@ -40,18 +69,32 @@ export class TestimonialComponent implements OnInit {
   }
 
   previousSlide(): void {
+    if (this.feedbacks.length === 0) return;
+    
     this.currentIndex = this.currentIndex === 0 
       ? this.feedbacks.length - 1 
       : this.currentIndex - 1;
   }
 
   nextSlide(): void {
+    if (this.feedbacks.length === 0) return;
+    
     this.currentIndex = this.currentIndex === this.feedbacks.length - 1 
       ? 0 
       : this.currentIndex + 1;
   }
 
   goToSlide(index: number): void {
-    this.currentIndex = index;
+    if (index >= 0 && index < this.feedbacks.length) {
+      this.currentIndex = index;
+    }
+  }
+
+  trackByIndex(index: number): number {
+    return index;
+  }
+
+  trackByFeedback(index: number, feedback: Feedback): string {
+    return feedback.id;
   }
 }
