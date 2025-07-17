@@ -1,6 +1,6 @@
 export interface Feedback {
     id: string;
-    text: string;
+    feedback: string;
     author: string;
     rating: number;
 }

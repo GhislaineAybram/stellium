@@ -2,6 +2,10 @@
 @use "tailwindcss";
 @use 'assets/styles/variables' as *;
 
+:root {
+  --accent-color-blue: #{$color-blue-700};
+}
+
 // ========================================
 // FONT
 // ========================================
@@ -71,6 +75,43 @@ body {
   width: 75px;
   height: 8px;
   background-color: $color-bronze-400;
+}
+
+// ========================================
+// BUTTONS
+// ========================================
+.button-action {
+  font-size: 0.875rem;
+  align-items: center;
+  background-color: $color-blue-700;
+  border: 1.5px solid $color-blue-800;
+  border-radius: .375rem;
+  box-shadow: $color-blue-100 0 1px 3px 0;
+  box-sizing: border-box;
+  color: $color-white;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  min-height: 2.2rem;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+}
+.button-action:hover,
+.button-action:focus {
+ box-shadow: $color-blue-200 0 4px 12px;
+ color: $color-bronze-200;
+}
+.button-action:hover {
+ transform: translateY(-1px);
+}
+.button-action:active {
+ background-color: $color-blue-800;
+ box-shadow: $color-blue-200 0 2px 4px;
+ color: $color-bronze-200;
+ transform: translateY(0);
 }
 
 // ========================================
