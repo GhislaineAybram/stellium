@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.isMenuOpen = false;
-    this.logo = 'assets/logo-site.png';
+    this.logo = 'assets/logo-mini-dark-mode.png';
     this.alt = 'logo site';
     this.presentation = 'Accueil';
     this.about = 'A propos';
