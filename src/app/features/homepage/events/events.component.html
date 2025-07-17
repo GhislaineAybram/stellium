@@ -3,7 +3,7 @@
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2
         class="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl section-line"
-      >
+        >
         Evenements
       </h2>
       <h4 class="mt-8 pb-8 text-lg/8 color-grey-dark">
@@ -11,67 +11,22 @@
       </h4>
     </div>
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      <article
-        *ngFor="let evening of evenings"
-        class="flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg overflow-hidden"
-      >
-        <div class="h-56 overflow-hidden">
-          <img
-            [src]="evening.picture"
-            alt="card-image"
-            class="object-cover h-full w-full"
-          />
-        </div>
-        <div class="flex flex-col justify-between flex-1 p-4 space-y-4">
-          <h6 class="text-slate-800 text-lg font-semibold">
-            {{ evening.title }}
-          </h6>
-          <div class="space-y-2">
-            <div class="flex items-center space-x-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-5 h-5 color-blue"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                />
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                />
-              </svg>
-              <p class="text-slate-600 font-light">{{ evening.location }}</p>
-            </div>
-
-            <div class="flex justify-between items-center">
-              <div class="flex items-center space-x-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  class="w-5 h-5 color-blue"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                <p
-                  [attr.datetime]="evening.date.toISOString()"
-                  class="text-slate-600 font-light"
-                >
-                  {{ evening.date | date : "d MMMM yyyy" }}
-                </p>
-              </div>
-
+      @for (evening of evenings; track evening.id) {
+        <article
+          class="flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg overflow-hidden"
+          >
+          <div class="h-56 overflow-hidden">
+            <img
+              [src]="evening.picture"
+              alt="card-image"
+              class="object-cover h-full w-full"
+              />
+          </div>
+          <div class="flex flex-col justify-between flex-1 p-4 space-y-4">
+            <h6 class="text-slate-800 text-lg font-semibold">
+              {{ evening.title }}
+            </h6>
+            <div class="space-y-2">
               <div class="flex items-center space-x-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -80,19 +35,64 @@
                   stroke-width="1.5"
                   stroke="currentColor"
                   class="w-5 h-5 color-blue"
-                >
+                  >
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                  />
+                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                    />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                    />
                 </svg>
-                <p class="text-slate-600 font-light">{{ evening.hour }}</p>
+                <p class="text-slate-600 font-light">{{ evening.location }}</p>
+              </div>
+              <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    class="w-5 h-5 color-blue"
+                    >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z"
+                      clip-rule="evenodd"
+                      />
+                  </svg>
+                  <p
+                    *ngIf="evening.date"
+                    [attr.datetime]="evening.date.toISOString()"
+                    class="text-slate-600 font-light"
+                    >
+                    {{ evening.date | date : 'd MMMM yyyy' }}
+                  </p>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5 color-blue"
+                    >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                  </svg>
+                  <p class="text-slate-600 font-light">{{ evening.hour }}</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+      }
     </div>
   </div>
 </div>

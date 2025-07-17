@@ -3,7 +3,7 @@
     <div class="mx-auto w-full lg:mx-0">
       <h2
         class="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl section-line"
-      >
+        >
         Vos retours
       </h2>
       <h4 class="mt-8 text-lg/8 color-grey-dark">
@@ -11,10 +11,10 @@
       </h4>
       <div
         class="mx-auto mt-10 max-w-2xl border-t border-gray-200 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none"
-      >
+        >
         <section
           class="relative isolate overflow-hidden bg-white px-6 py-12 sm:py-16 lg:px-8"
-        >
+          >
           <div
             class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,var(--color-indigo-100),white)] opacity-20"
           ></div>
@@ -30,13 +30,13 @@
                 (click)="previousSlide()"
                 class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white hover:bg-gray-50 rounded-full p-2 shadow-lg border border-gray-200 transition-all duration-200 hover:scale-110"
                 [disabled]="feedbacks.length <= 1"
-              >
+                >
                 <svg
                   class="w-5 h-5 color-grey-dark"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
-                >
+                  >
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -50,13 +50,13 @@
                 (click)="nextSlide()"
                 class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white hover:bg-gray-50 rounded-full p-2 shadow-lg border border-gray-200 transition-all duration-200 hover:scale-110"
                 [disabled]="feedbacks.length <= 1"
-              >
+                >
                 <svg
                   class="w-5 h-5 color-grey-dark"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
-                >
+                  >
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -69,10 +69,10 @@
               <!-- Feedback Content -->
               <figure
                 class="transition-all duration-500 ease-in-out px-12 sm:px-16"
-              >
+                >
                 <blockquote
                   class="text-center text-xl/8 font-semibold sm:text-xl/9"
-                >
+                  >
                   <p class="transition-opacity duration-300">
                     "{{ currentFeedback?.text }}"
                   </p>
@@ -80,25 +80,26 @@
 
                 <div
                   class="flex justify-center items-center space-x-8 mb-4 mt-8"
-                >
+                  >
                   <div class="color-grey-dark text-lg font-semibold">
                     {{ currentFeedback?.author }}
                   </div>
                   <div
                     class="flex text-yellow-500 text-xl items-center justify-center"
-                  >
-                    <span
-                      *ngFor="let star of starsArray"
-                      [class]="star ? 'text-yellow-500' : 'text-gray-300'"
-                      >★</span
                     >
+                    @for (star of starsArray; track i; let i = $index) {
+                      <span
+                        [class]="star ? 'text-yellow-500' : 'text-gray-300'"
+                        >★</span
+                        >
+                      }
+                    </div>
                   </div>
-                </div>
-              </figure>
+                </figure>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </div>
   </div>
-</div>

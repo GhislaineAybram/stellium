@@ -14,6 +14,7 @@ export class MediasComponent implements OnInit {
   ngOnInit(): void {
     this.medias = [
       {
+        id: '1',
         date: new Date('2021-04-22'),
         channel: 'BFM Business',
         title: `Le surplus d’épargne lié à la crise de Covid-19 va-t-il pousser les Français à investir davantage ?`,
@@ -21,6 +22,7 @@ export class MediasComponent implements OnInit {
         link: 'https://www.dailymotion.com/video/x80slvn'
       },
       {
+        id: '2',
         date: new Date('2022-12-08'),
         channel: 'BFM Business',
         title: `L'immobilier constitue-t-il encore un rempart contre l'inflation ?`,

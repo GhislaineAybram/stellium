@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Feedback } from '../../../models/feedback';
 
 @Component({
   selector: 'app-testimonial',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './testimonial.component.html',
   styleUrl: './testimonial.component.scss'
 })
@@ -16,14 +16,16 @@ export class TestimonialComponent implements OnInit {
   ngOnInit(): void {
     this.feedbacks = [
       {
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.',
-      author: 'Julie V.',
-      rating: 5
+        id: '1',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.',
+        author: 'Julie V.',
+        rating: 5
       },
       {
-      text: 'Tempore quo primis auspiciis in mundanum fulgorem surgeret victura dum erunt homines Roma, ut augeretur sublimibus incrementis, foedere pacis aeternae Virtus convenit atque Fortuna plerumque dissidentes, quarum si altera defuisset, ad perfectam non venerat summitatem.',
-      author: 'Marc G.',
-      rating: 4
+        id: '2',
+        text: 'Tempore quo primis auspiciis in mundanum fulgorem surgeret victura dum erunt homines Roma, ut augeretur sublimibus incrementis, foedere pacis aeternae Virtus convenit atque Fortuna plerumque dissidentes, quarum si altera defuisset, ad perfectam non venerat summitatem.',
+        author: 'Marc G.',
+        rating: 4
       },
     ];
   }

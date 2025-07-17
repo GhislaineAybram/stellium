@@ -3,7 +3,7 @@
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2
         class="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl section-line"
-      >
+        >
         On parle de nous
       </h2>
       <h4 class="mt-8 text-lg/8 color-grey-dark">
@@ -12,43 +12,45 @@
     </div>
     <div
       class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
-    >
-      <article *ngFor="let media of medias" class="flex max-w-xl flex-col items-start justify-between">
-        <div class="flex items-center gap-x-4 text-xs">
-          <div class="flex justify-between items-center mb-4">
-            <time [attr.datetime]="media.date.toISOString()" class="color-grey-dark"
-              >{{ media.date | date:'d MMMM yyyy' }}</time
-            >
-            <p
-              class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium color-grey-dark"
-            >
-              {{ media.channel }}
+      >
+      @for (media of medias; track media.id) {
+        <article class="flex max-w-xl flex-col items-start justify-between">
+          <div class="flex items-center gap-x-4 text-xs">
+            <div class="flex justify-between items-center mb-4">
+              <time *ngIf="media.date" [attr.datetime]="media.date.toISOString()" class="color-grey-dark"
+                >{{ media.date | date: 'd MMMM yyyy' }}</time
+                >
+                <p
+                  class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium color-grey-dark"
+                  >
+                  {{ media.channel }}
+                </p>
+              </div>
+            </div>
+            <div class="group relative">
+              <h3
+                class="text-lg/6 font-semibold group-hover:text-gray-600"
+                >
+                <!-- <a href="#"> -->
+                <span class="absolute inset-0"></span>
+                {{ media.title }}
+              <!-- </a> -->
+            </h3>
+            <p class="mt-5 line-clamp-3 text-sm/6 color-grey-dark">
+              {{ media.text }}
             </p>
           </div>
-        </div>
-        <div class="group relative">
-          <h3
-            class="text-lg/6 font-semibold group-hover:text-gray-600"
-          >
-            <!-- <a href="#"> -->
-              <span class="absolute inset-0"></span>
-              {{ media.title }}
-            <!-- </a> -->
-          </h3>
-          <p class="mt-5 line-clamp-3 text-sm/6 color-grey-dark">
-            {{ media.text }}
-          </p>
-        </div>
-      <div class="relative mt-8 flex items-center gap-x-4">
-        <a [href]="media.link" target="_blank" rel="noopener noreferrer" class="block w-full">
-          <img
-            [src]="'https://img.youtube.com/vi/' + extractYouTubeId(media.link) + '/hqdefault.jpg'"
-            alt="aperçu vidéo"
-            class="w-full h-[275px] object-cover rounded-lg"
-          />
-        </a>
-      </div>
-      </article>
+          <div class="relative mt-8 flex items-center gap-x-4">
+            <a [href]="media.link" target="_blank" rel="noopener noreferrer" class="block w-full">
+              <img
+                [src]="'https://img.youtube.com/vi/' + extractYouTubeId(media.link) + '/hqdefault.jpg'"
+                alt="aperçu vidéo"
+                class="w-full h-[275px] object-cover rounded-lg"
+                />
+            </a>
+          </div>
+        </article>
+      }
 
     </div>
   </div>
