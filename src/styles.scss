@@ -4,6 +4,10 @@
 
 :root {
   --accent-color-blue: #{$color-blue-700};
+  --color-blue-dark: #{$color-blue-800};
+  --color-blue-medium: #{$color-blue-700};
+  --color-blue-light: #{$color-blue-200};
+  --color-blue-very-light: #{$color-blue-100};
 }
 
 // ========================================
@@ -54,11 +58,17 @@ body {
   color: $color-white;
 }
 
+.bg-white-light {
+  background-color: $color-white;
+}
 .bg-blue-very-light {
   background-color: $color-blue-100;
 }
 .bg-blue-light {
   background-color: $color-blue-200;
+}
+.bg-blue-medium {
+  background-color: $color-blue-700;
 }
 
 .section-line {

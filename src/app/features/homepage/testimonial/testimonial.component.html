@@ -1,13 +1,13 @@
-<div class="bg-white py-12 sm:py-16">
+<div class="bg-white-light py-12 sm:py-16">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto w-full lg:mx-0">
-      <h2 class="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl section-line">
+      <h2 class="text-4xl color-blue font-semibold tracking-tight text-pretty sm:text-5xl section-line">
         Vos retours
       </h2>
       <h4 class="mt-8 text-lg/8 color-grey-dark">
         Parce que c'est vous qui en parlez le mieux
       </h4>
-      <div class="mx-auto mt-10 max-w-2xl border-t border-gray-200 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none">
+      <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
         
         <!-- Loading State -->
         <div *ngIf="isLoading" class="text-center py-12">
@@ -24,10 +24,10 @@
         <!-- Testimonials Section -->
         @if (!isLoading && feedbacks.length > 0) {
         <section 
-          class="relative isolate overflow-hidden bg-white px-6 py-12 sm:py-16 lg:px-8">
+          class="relative isolate overflow-hidden bg-white-light px-6 py-12 sm:py-16 lg:px-8">
           
-          <div class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,var(--color-indigo-100),white)] opacity-20"></div>
-          <div class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl ring-1 shadow-indigo-600/10 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
+          <div class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,var(--color-blue-very-light),white)] opacity-20"></div>
+          <div class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white-light shadow-xl ring-1 shadow-[0_20px_25px_-5px_var(--color-blue-medium)] ring-[color:var(--color-blue-very-light)] sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
 
           <div class="mx-auto max-w-2xl lg:max-w-2xl">
             <!-- Carousel Container -->
@@ -36,7 +36,7 @@
               <!-- Navigation Arrows -->
               <button
                 (click)="previousSlide()"
-                class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white hover:bg-gray-50 rounded-full p-2 shadow-lg border border-gray-200 transition-all duration-200 hover:scale-110"
+                class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white-light hover:bg-gray-50 rounded-full p-2 shadow-lg border border-gray-200 transition-all duration-200 hover:scale-110"
                 [disabled]="feedbacks.length <= 1">
                 <svg class="w-5 h-5 color-grey-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -45,7 +45,7 @@
 
               <button
                 (click)="nextSlide()"
-                class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white hover:bg-gray-50 rounded-full p-2 shadow-lg border border-gray-200 transition-all duration-200 hover:scale-110"
+                class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white-light hover:bg-gray-50 rounded-full p-2 shadow-lg border border-gray-200 transition-all duration-200 hover:scale-110"
                 [disabled]="feedbacks.length <= 1">
                 <svg class="w-5 h-5 color-grey-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -80,7 +80,7 @@
                 <button
                   (click)="goToSlide(i)"
                   class="w-3 h-3 rounded-full transition-colors duration-200"
-                  [class]="i === currentIndex ? 'bg-indigo-600' : 'bg-gray-300 hover:bg-gray-400'">
+                  [class]="i === currentIndex ? 'bg-blue-medium' : 'bg-gray-300 hover:bg-gray-400'">
                 </button>
               }
             </div>
