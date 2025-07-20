@@ -8,5 +8,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
-
+  receivedUrl = `${window.location.origin}/received`;
 }

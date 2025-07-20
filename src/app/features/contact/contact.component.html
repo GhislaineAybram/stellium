@@ -17,7 +17,7 @@
       expliquer comment je peux vous accompagner.
     </p>
   </div>
-  <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+  <form action="https://formsubmit.co/ghislaine.aybram@gmail.com" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
     <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
       <div>
         <label
@@ -115,6 +115,8 @@
       </div>
     </div>
     <div class="mt-10">
+      <input type="hidden" name="_next" [value]="receivedUrl">
+      <input type="hidden" name="_template" value="box">
       <button
         type="submit"
         class="w-full px-3.5 py-2.5 text-center text-sm font-semibold button-action"
