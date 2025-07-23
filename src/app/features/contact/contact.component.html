@@ -17,13 +17,13 @@
       expliquer comment je peux vous accompagner.
     </p>
   </div>
-  <form action="https://formsubmit.co/ghislaine.aybram@gmail.com" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+  <form action="https://formsubmit.co/julien.poudras@outlook.fr" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
     <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
       <div>
         <label
           for="first-name"
           class="block text-sm/6 font-semibold"
-          >Prénom</label
+          >Prénom <span class="text-red-600">*</span></label
         >
         <div class="mt-2.5">
           <input
@@ -41,7 +41,7 @@
         <label
           for="last-name"
           class="block text-sm/6 font-semibold"
-          >Nom</label
+          >Nom <span class="text-red-600">*</span></label
         >
         <div class="mt-2.5">
           <input
@@ -55,9 +55,9 @@
           />
         </div>
       </div>
-      <div class="sm:col-span-2">
+      <div>
         <label for="email" class="block text-sm/6 font-semibold"
-          >Email</label
+          >Email <span class="text-red-600">*</span></label
         >
         <div class="mt-2.5">
           <input
@@ -66,15 +66,17 @@
             id="email"
             autocomplete="email"
             placeholder="jean.dupont@email.com"
+            required
             class="block w-full rounded-md bg-white-light px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[color:var(--color-blue-medium)]"
+            (input)="onEmailInput($event)"
           />
         </div>
       </div>
-      <div class="sm:col-span-2">
+      <div>
         <label
           for="phone-number"
           class="block text-sm/6 font-semibold"
-          >Numéro de téléphone</label
+          >Numéro de téléphone <span class="text-red-600">*</span></label
         >
         <div class="mt-2.5">
           <div
@@ -82,17 +84,33 @@
           >
             <input
               type="tel"
-              name="phone-number"
+              name="tel"
               id="phone-number"
+              autocomplete="tel"
               class="block w-full rounded-md bg-white-light px-3.5 py-2 text-base placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[color:var(--color-blue-medium)]"
-              placeholder="+33 6 12 34 56 78 90"
+              placeholder="06 12 34 56 78 90"
+              required
             />
           </div>
         </div>
       </div>
       <div class="sm:col-span-2">
+        <label for="availability" class="block text-sm/6 font-semibold"
+          >Disponibilités</label
+        >
+        <div class="mt-2.5">
+          <textarea
+            name="availability"
+            id="availability"
+            rows="2"
+            placeholder="Sur quels créneaux préférez-vous être recontacté(e) ?"
+            class="block w-full rounded-md bg-white-light px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[color:var(--color-blue-medium)]"
+          ></textarea>
+        </div>
+      </div>
+      <div class="sm:col-span-2">
         <label for="message" class="block text-sm/6 font-semibold"
-          >Message</label
+          >Message <span class="text-red-600">*</span></label
         >
         <div class="mt-2.5">
           <textarea
@@ -100,6 +118,7 @@
             id="message"
             rows="4"
             placeholder="Votre message ici..."
+            required
             class="block w-full rounded-md bg-white-light px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[color:var(--color-blue-medium)]"
           ></textarea>
         </div>
@@ -107,15 +126,15 @@
       <div class="flex gap-x-4 sm:col-span-2 items-baseline">
         <input type="checkbox" id="consent" name="consent" required class="mr-2" style="accent-color: var(--accent-color-blue)" />
         <label class="text-sm/6 color-grey-dark" id="switch-1-label">
-          En nous communiquant vos données personnelles, vous consentez à ce que
-          nous les utilisions aux seules fins de vous répondre comme indiqué
-          dans notre
+          En soumettant ce formulaire, vous acceptez que vos données soient utilisées pour vous recontacter, 
+          conformément à notre
           <a routerLink="/privacy" class="visible-link">politique de protection des données</a>.
         </label>
       </div>
     </div>
     <div class="mt-10">
-      <input type="hidden" name="_next" [value]="receivedUrl">
+      <input *ngIf="receivedUrl" type="hidden" name="_next" [value]="receivedUrl">
+      <input type="hidden" name="_replyto" [value]="emailValue" />
       <input type="hidden" name="_template" value="box">
       <button
         type="submit"

@@ -17,7 +17,7 @@ export class TestimonialComponent implements OnInit, AfterViewInit {
   constructor(
     private readonly supabase: SupabaseService,
     @Inject(PLATFORM_ID) private platformId: Object,
-    private cdr: ChangeDetectorRef // Ajouter ceci
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -31,7 +31,7 @@ export class TestimonialComponent implements OnInit, AfterViewInit {
       }, 0);
     } else {
       this.isLoading = false;
-      this.cdr.detectChanges(); // Ajouter ceci
+      this.cdr.detectChanges();
     }
   }
 
@@ -54,7 +54,7 @@ export class TestimonialComponent implements OnInit, AfterViewInit {
       this.feedbacks = [];
     } finally {
       this.isLoading = false;
-      this.cdr.detectChanges(); // Ajouter ceci
+      this.cdr.detectChanges();
       console.log('Final feedbacks:', this.feedbacks);
     }
   }
