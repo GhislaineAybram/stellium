@@ -16,22 +16,22 @@ export class PillarsComponent {
       {
         id: '1',
         name: 'Compléter ses revenus',
-        description: 'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.'
+        description: `Développez des sources de revenus complémentaires grâce à des placements adaptés à votre profil de risque. Que ce soit par l'investissement locatif, les produits financiers ou l'épargne de précaution, je vous aide à construire un patrimoine générateur de revenus réguliers et durables.`
       },
       {
         id: '2',
         name: 'Protéger ses proches',
-        description: 'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.'
+        description: `Anticipez l'avenir et protégez votre famille grâce à des solutions de prévoyance sur mesure. Assurance-vie, contrats de prévoyance, garanties décès et invalidité : ensemble, nous mettons en place les dispositifs qui sécurisent votre patrimoine et préservent le niveau de vie de vos proches.`
       },
       {
         id: '3',
         name: 'Préparer sa retraite',
-        description: 'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.'
+        description: `Constituez dès aujourd'hui un capital retraite qui vous garantira le maintien de votre niveau de vie. Plans d'épargne retraite, investissements programmés, stratégies de capitalisation : je vous accompagne pour bâtir une retraite sereine et anticiper la baisse de vos revenus futurs.`
       },
       {
         id: '4',
         name: 'Optimiser sa fiscalité',
-        description: 'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.'
+        description: `Réduisez légalement votre pression fiscale en tirant parti des dispositifs existants. Défiscalisation immobilière, produits d'épargne défiscalisés, optimisation de la transmission : je vous guide pour structurer efficacement votre patrimoine et maximiser votre épargne nette.`
       },
     ]
   }
