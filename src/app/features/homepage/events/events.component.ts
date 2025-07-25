@@ -1,3 +1,11 @@
+/**
+ * @fileoverview Events Component - Thematic events and conferences
+ * @description Component managing the display of upcoming thematic evenings
+ * and conferences organized by the Financial Advisor
+ * 
+ * @copyright Copyright (c) 2025 Julien Poudras. All rights reserved.
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { Evening } from '../../../models/evening';
 import { CommonModule } from '@angular/common';

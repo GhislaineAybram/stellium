@@ -1,3 +1,11 @@
+/**
+ * @fileoverview News Component - News and legal updates
+ * @description Component managing the display of articles about legal changes,
+ * tax updates and financial news that may impact client finances
+ * 
+ * @copyright Copyright (c) 2025 Julien Poudras. All rights reserved.
+ */
+
 import { Component } from '@angular/core';
 import { Article } from '../../../models/article';
 import { CommonModule } from '@angular/common';

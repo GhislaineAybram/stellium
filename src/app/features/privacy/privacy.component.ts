@@ -1,3 +1,11 @@
+/**
+ * @fileoverview Privacy Component - Privacy policy and data protection
+ * @description Component managing the display of privacy policy,
+ * GDPR compliance information and personal data processing details
+ * 
+ * @copyright Copyright (c) 2025 Julien Poudras. All rights reserved.
+ */
+
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 

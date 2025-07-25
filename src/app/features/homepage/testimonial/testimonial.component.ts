@@ -1,3 +1,11 @@
+/**
+ * @fileoverview Testimonial Component - Client feedback and reviews
+ * @description Component managing the display of client testimonials
+ * and feedback about the Financial Advisor services provided
+ * 
+ * @copyright Copyright (c) 2025 Julien Poudras. All rights reserved.
+ */
+
 import { Component, Inject, OnInit, AfterViewInit, PLATFORM_ID, ChangeDetectorRef } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Feedback } from '../../../models/feedback';

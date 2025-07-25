@@ -1,3 +1,11 @@
+/**
+ * @fileoverview Homepage Component - Main landing page
+ * @description Component managing the homepage layout with all main sections:
+ * about, services pillars, news, partner videos, events and client testimonials
+ * 
+ * @copyright Copyright (c) 2025 Julien Poudras. All rights reserved.
+ */
+
 import { Component } from '@angular/core';
 import { TestimonialComponent } from '../testimonial/testimonial.component';
 import { EventsComponent } from '../events/events.component';

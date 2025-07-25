@@ -1,3 +1,10 @@
+/**
+ * @fileoverview Pillars Component - Wealth management services offered
+ * @description Component managing the display of professional services including
+ * income generation, asset protection, retirement planning and tax optimization
+ * 
+ * @copyright Copyright (c) 2025 Julien Poudras. All rights reserved.
+ */
 
 import { Component } from '@angular/core';
 import { Pillar } from '../../../models/pillar';

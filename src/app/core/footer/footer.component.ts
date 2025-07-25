@@ -1,3 +1,11 @@
+/**
+ * @fileoverview Footer Component - Site footer with links and information
+ * @description Component managing the footer display with contact information,
+ * legal links, social media and additional navigation elements
+ * 
+ * @copyright Copyright (c) 2025 Julien Poudras. All rights reserved.
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 

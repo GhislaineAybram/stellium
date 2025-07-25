@@ -1,3 +1,11 @@
+/**
+ * @fileoverview Legal Component - Legal notices and terms of use
+ * @description Component managing the display of legal information,
+ * terms of service, disclaimers and regulatory compliance information
+ * 
+ * @copyright Copyright (c) 2025 Julien Poudras. All rights reserved.
+ */
+
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 

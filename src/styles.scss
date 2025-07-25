@@ -13,9 +13,6 @@
 // ========================================
 // FONT
 // ========================================
-// h1 {
-//   font-family: 'Playfair Display', serif;
-// }
 h1 {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
@@ -63,12 +60,18 @@ body {
 .color-blue {
   color: $color-blue-700;
 }
+.color-grey-light {
+  color: $color-grey-300;
+}
 .color-white {
   color: $color-white;
 }
 
 .bg-white-light {
   background-color: $color-white;
+}
+.bg-bronze-light {
+  background-color: $color-bronze-200;
 }
 .bg-blue-very-light {
   background-color: $color-blue-100;
@@ -78,6 +81,9 @@ body {
 }
 .bg-blue-medium {
   background-color: $color-blue-700;
+}
+.bg-grey-very-light {
+  background-color: $color-grey-100;
 }
 
 // title decoration
@@ -117,6 +123,8 @@ body {
 // ========================================
 // BUTTONS
 // ========================================
+
+// action button
 .button-action {
   font-size: 0.875rem;
   align-items: center;

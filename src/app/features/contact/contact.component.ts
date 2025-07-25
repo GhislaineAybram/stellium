@@ -1,3 +1,11 @@
+/**
+ * @fileoverview Contact Component - Visitor contact form
+ * @description Component managing the contact form where visitors can
+ * submit their information to request a callback from the Financial Advisor
+ * 
+ * @copyright Copyright (c) 2025 Julien Poudras. All rights reserved.
+ */
+
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, inject, PLATFORM_ID } from '@angular/core';
 import { RouterLink } from '@angular/router';
